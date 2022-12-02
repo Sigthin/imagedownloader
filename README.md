@@ -33,5 +33,5 @@ bundle exec rubocop
 Feed new-line separated urls file
 
 ```sh
-bin/run /path/to/file.txt
+bin/run examples.txt
 ```
