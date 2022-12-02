@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'rubygems'
+require 'bundler/setup'
+require './lib/image_downloader'
+
+begin
+  ImageDownloader.new(ARGV[0]).call
+rescue *ImageDownloader::FileValidator::EXCEPTIONS => e
+  puts e.message
+rescue StandardError => e
+  puts "#{e.class}: #{e.message}"
+end
